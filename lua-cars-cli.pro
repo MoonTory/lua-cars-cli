@@ -14,69 +14,73 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-INCLUDEPATH += $$PWD/libs/
+INCLUDEPATH += $$PWD/vendor/spdlog/include/ \
+    $$PWD/vendor/json/single_include/
 
 SOURCES += main.cpp \
     src/statemachine.cpp \
     src/application.cpp \
     src/loginstate.cpp \
-    src/log.cpp
+    src/log.cpp \
 
 HEADERS += \
+    src/application.hpp \
+    src/log.h \
+    src/loginstate.hpp \
     src/state.hpp \
     src/statemachine.hpp \
-    src/application.hpp \
-    src/loginstate.hpp \
-    libs/spdlog/details/async_logger_impl.h \
-    libs/spdlog/details/circular_q.h \
-    libs/spdlog/details/console_globals.h \
-    libs/spdlog/details/file_helper.h \
-    libs/spdlog/details/fmt_helper.h \
-    libs/spdlog/details/log_msg.h \
-    libs/spdlog/details/logger_impl.h \
-    libs/spdlog/details/mpmc_blocking_q.h \
-    libs/spdlog/details/null_mutex.h \
-    libs/spdlog/details/os.h \
-    libs/spdlog/details/pattern_formatter.h \
-    libs/spdlog/details/periodic_worker.h \
-    libs/spdlog/details/registry.h \
-    libs/spdlog/details/thread_pool.h \
-    libs/spdlog/fmt/bundled/colors.h \
-    libs/spdlog/fmt/bundled/core.h \
-    libs/spdlog/fmt/bundled/format-inl.h \
-    libs/spdlog/fmt/bundled/format.h \
-    libs/spdlog/fmt/bundled/ostream.h \
-    libs/spdlog/fmt/bundled/posix.h \
-    libs/spdlog/fmt/bundled/printf.h \
-    libs/spdlog/fmt/bundled/ranges.h \
-    libs/spdlog/fmt/bundled/time.h \
-    libs/spdlog/fmt/bin_to_hex.h \
-    libs/spdlog/fmt/fmt.h \
-    libs/spdlog/fmt/ostr.h \
-    libs/spdlog/sinks/android_sink.h \
-    libs/spdlog/sinks/ansicolor_sink.h \
-    libs/spdlog/sinks/base_sink.h \
-    libs/spdlog/sinks/basic_file_sink.h \
-    libs/spdlog/sinks/daily_file_sink.h \
-    libs/spdlog/sinks/dist_sink.h \
-    libs/spdlog/sinks/msvc_sink.h \
-    libs/spdlog/sinks/null_sink.h \
-    libs/spdlog/sinks/ostream_sink.h \
-    libs/spdlog/sinks/rotating_file_sink.h \
-    libs/spdlog/sinks/sink.h \
-    libs/spdlog/sinks/stdout_color_sinks.h \
-    libs/spdlog/sinks/stdout_sinks.h \
-    libs/spdlog/sinks/syslog_sink.h \
-    libs/spdlog/sinks/wincolor_sink.h \
-    libs/spdlog/async.h \
-    libs/spdlog/async_logger.h \
-    libs/spdlog/common.h \
-    libs/spdlog/formatter.h \
-    libs/spdlog/logger.h \
-    libs/spdlog/spdlog.h \
-    libs/spdlog/tweakme.h \
-    libs/spdlog/version.h \
-    src/log.h
+    vendor/json/single_include/nlohmann/json.hpp \
+    vendor/spdlog/include/spdlog/details/async_logger_impl.h \
+    vendor/spdlog/include/spdlog/details/circular_q.h \
+    vendor/spdlog/include/spdlog/details/console_globals.h \
+    vendor/spdlog/include/spdlog/details/file_helper.h \
+    vendor/spdlog/include/spdlog/details/fmt_helper.h \
+    vendor/spdlog/include/spdlog/details/log_msg.h \
+    vendor/spdlog/include/spdlog/details/logger_impl.h \
+    vendor/spdlog/include/spdlog/details/mpmc_blocking_q.h \
+    vendor/spdlog/include/spdlog/details/null_mutex.h \
+    vendor/spdlog/include/spdlog/details/os.h \
+    vendor/spdlog/include/spdlog/details/pattern_formatter.h \
+    vendor/spdlog/include/spdlog/details/periodic_worker.h \
+    vendor/spdlog/include/spdlog/details/registry.h \
+    vendor/spdlog/include/spdlog/details/thread_pool.h \
+    vendor/spdlog/include/spdlog/fmt/bundled/colors.h \
+    vendor/spdlog/include/spdlog/fmt/bundled/core.h \
+    vendor/spdlog/include/spdlog/fmt/bundled/format-inl.h \
+    vendor/spdlog/include/spdlog/fmt/bundled/format.h \
+    vendor/spdlog/include/spdlog/fmt/bundled/ostream.h \
+    vendor/spdlog/include/spdlog/fmt/bundled/posix.h \
+    vendor/spdlog/include/spdlog/fmt/bundled/printf.h \
+    vendor/spdlog/include/spdlog/fmt/bundled/ranges.h \
+    vendor/spdlog/include/spdlog/fmt/bundled/time.h \
+    vendor/spdlog/include/spdlog/fmt/bin_to_hex.h \
+    vendor/spdlog/include/spdlog/fmt/fmt.h \
+    vendor/spdlog/include/spdlog/fmt/ostr.h \
+    vendor/spdlog/include/spdlog/sinks/android_sink.h \
+    vendor/spdlog/include/spdlog/sinks/ansicolor_sink.h \
+    vendor/spdlog/include/spdlog/sinks/base_sink.h \
+    vendor/spdlog/include/spdlog/sinks/basic_file_sink.h \
+    vendor/spdlog/include/spdlog/sinks/daily_file_sink.h \
+    vendor/spdlog/include/spdlog/sinks/dist_sink.h \
+    vendor/spdlog/include/spdlog/sinks/msvc_sink.h \
+    vendor/spdlog/include/spdlog/sinks/null_sink.h \
+    vendor/spdlog/include/spdlog/sinks/ostream_sink.h \
+    vendor/spdlog/include/spdlog/sinks/rotating_file_sink.h \
+    vendor/spdlog/include/spdlog/sinks/sink.h \
+    vendor/spdlog/include/spdlog/sinks/stdout_color_sinks.h \
+    vendor/spdlog/include/spdlog/sinks/stdout_sinks.h \
+    vendor/spdlog/include/spdlog/sinks/syslog_sink.h \
+    vendor/spdlog/include/spdlog/sinks/wincolor_sink.h \
+    vendor/spdlog/include/spdlog/async.h \
+    vendor/spdlog/include/spdlog/async_logger.h \
+    vendor/spdlog/include/spdlog/common.h \
+    vendor/spdlog/include/spdlog/formatter.h \
+    vendor/spdlog/include/spdlog/logger.h \
+    vendor/spdlog/include/spdlog/spdlog.h \
+    vendor/spdlog/include/spdlog/tweakme.h \
+    vendor/spdlog/include/spdlog/version.h
 
 DISTFILES += \
-    libs/spdlog/fmt/bundled/LICENSE.rst
+    vendor/spdlog/include/spdlog/fmt/bundled/LICENSE.rst \
+    vendor/spdlog/include/spdlog/fmt/bundled/LICENSE.rst \
+    LICENSE

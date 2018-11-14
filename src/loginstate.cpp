@@ -1,6 +1,7 @@
 #include "loginstate.hpp"
 #include <iostream>
 
+
 namespace Luna {
 
     LoginState::LoginState(AppDataRef _data)
