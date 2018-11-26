@@ -16,7 +16,7 @@ namespace Luna {
         static std::shared_ptr<spdlog::logger> m_CoreLogger;
     };
 
-}
+} // namespace luna
 
 #define LUNA_TRACE(...)    ::Luna::Log::GetCoreLogger()->trace(__VA_ARGS__)
 #define LUNA_INFO(...)     ::Luna::Log::GetCoreLogger()->info(__VA_ARGS__)

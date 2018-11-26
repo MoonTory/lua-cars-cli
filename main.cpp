@@ -2,14 +2,16 @@
 #include "src/application.hpp"
 
 /*
- * TODO: File System
- * TODO:
+ * TODO: File Manager
+ * TODO: Read & Write to JSON files
+ * TODO: Login State
+ * TODO: Main Menu State
  * TODO: License
  */
 
-int main()
+int main(int argc, char *argv[])
 {
-    Luna::Application app;
+    Luna::Application app(argc, argv);
 
-    return EXIT_SUCCESS;
+    return app.exec();
 }

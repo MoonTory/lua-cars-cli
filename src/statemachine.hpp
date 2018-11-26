@@ -12,8 +12,8 @@ namespace Luna {
     class StateMachine
     {
     public:
-        StateMachine() { };
-        ~StateMachine() { };
+        StateMachine() { }
+        ~StateMachine() { }
 
         void AddState( StateRef _newState, bool _isReplacing = true );
         void RemoveState();
@@ -27,7 +27,7 @@ namespace Luna {
         bool m_isAdding, m_isRemoving, m_isReplacing;
     };
 
-}
+} // namespace luna
 
 
 #endif // STATEMACHINE_H

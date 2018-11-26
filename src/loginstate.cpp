@@ -1,6 +1,7 @@
 #include "loginstate.hpp"
 #include <iostream>
 
+#include <nlohmann/json.hpp>
 
 namespace Luna {
 
@@ -12,22 +13,8 @@ namespace Luna {
 
     void LoginState::Init()
     {
+        m_dialog.show();
         LUNA_WARN("Initialized Login State");
-    }
-
-    void LoginState::Update()
-    {
-        LUNA_INFO("Updated Login State");
-    }
-
-    void LoginState::Render()
-    {
-        LUNA_INFO("Rendered Login State");
-    }
-
-    void LoginState::HandleInput()
-    {
-        std::cin.get();
     }
 
 }

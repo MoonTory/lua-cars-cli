@@ -1,6 +1,7 @@
 #ifndef APPLICATION_HPP
 #define APPLICATION_HPP
 
+#include <QApplication>
 #include "src/statemachine.hpp"
 #include "log.h"
 
@@ -13,10 +14,11 @@ namespace Luna {
 
     typedef std::shared_ptr<AppData> AppDataRef;
 
-    class Application
+    class Application : public QApplication
     {
+        Q_OBJECT
     public:
-        Application();
+        Application(int argc, char* argv[]);
         ~Application();
 
     private:
@@ -26,7 +28,6 @@ namespace Luna {
         void Run();
     };
 
-}
-
+} // namespace luna
 
 #endif // APPLICATION_HPP
