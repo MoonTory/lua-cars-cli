@@ -6,7 +6,7 @@ namespace Luna {
     class State
     {
     public:
-        ~State() = default;
+        virtual ~State() = default;
 
         virtual void Init() = 0;
 

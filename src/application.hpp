@@ -2,14 +2,16 @@
 #define APPLICATION_HPP
 
 #include <QApplication>
-#include "src/statemachine.hpp"
+#include "statemachine.hpp"
+#include "eventhandler.h"
 #include "log.h"
 
 namespace Luna {
 
     struct AppData
     {
-        StateMachine machine;
+        StateMachine *machine;
+        EventHandler *eventHandler;
     };
 
     typedef std::shared_ptr<AppData> AppDataRef;

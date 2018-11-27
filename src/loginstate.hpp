@@ -1,9 +1,10 @@
 #ifndef LOGINSTATE_HPP
 #define LOGINSTATE_HPP
 
-#include <QDialog>
+
 #include "state.hpp"
 #include "application.hpp"
+#include "LoginDialog/logindialog.h"
 
 namespace Luna {
 
@@ -15,7 +16,7 @@ namespace Luna {
         void Init()         override;
     private:
         AppDataRef m_data;
-        QDialog m_dialog;
+        LoginDialog *m_dialog;
     };
 
 } // namespace luna

@@ -7,11 +7,13 @@ namespace Luna {
     Application::Application(int argc, char *argv[])
         :QApplication(argc, argv)
     {
+      this->m_data->machine = new StateMachine();
+      this->m_data->eventHandler = new EventHandler();
       Log::Init();
 
       std::cout << R"()" << "\n\n\n";
 
-      this->m_data->machine.AddState(StateRef( new LoginState( this->m_data ) ));
+      this->m_data->machine->AddState(StateRef( new LoginState( this->m_data ) ));
 
       this->m_isRunning = true;
 
@@ -22,7 +24,7 @@ namespace Luna {
 
     void Application::Run()
     {
-        this->m_data->machine.Update();
+        this->m_data->machine->Update();
     }
 
 }

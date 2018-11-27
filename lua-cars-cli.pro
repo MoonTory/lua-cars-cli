@@ -2,7 +2,7 @@ QT += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++14 console
+CONFIG += c++11 console
 CONFIG -= app_bundle
 
 # The following define makes your compiler emit warnings if you use
@@ -24,7 +24,8 @@ SOURCES += main.cpp \
     src/application.cpp \
     src/loginstate.cpp \
     src/log.cpp \
-    src/filemanager.cpp
+    src/LoginDialog/logindialog.cpp \
+    src/eventhandler.cpp
 
 HEADERS += \
     src/application.hpp \
@@ -82,7 +83,8 @@ HEADERS += \
     vendor/spdlog/include/spdlog/spdlog.h \
     vendor/spdlog/include/spdlog/tweakme.h \
     vendor/spdlog/include/spdlog/version.h \
-    src/filemanager.h
+    src/LoginDialog/logindialog.h \
+    src/eventhandler.h
 
 DISTFILES += \
     vendor/spdlog/include/spdlog/fmt/bundled/LICENSE.rst \
