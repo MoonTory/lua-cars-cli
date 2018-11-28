@@ -1,6 +1,7 @@
 #include "logindialog.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QPixmap>
 #include <QDebug>
 
 namespace Luna {
@@ -9,38 +10,46 @@ namespace Luna {
         :QDialog(parent)
     {
         this->setWindowTitle("Login");
-        this->m_userLabel = new QLabel("Username:");
-        this->m_passLabel = new QLabel("Password:");
+        this->setFixedSize(265, 145);
+
+        this->m_logo = new QLabel();
+        this->m_logo->setPixmap(QPixmap(QString("resources/logo/Luna_Cars_Client_Logo.png")));
+
+        this->m_userLabel = new QLabel(tr("Username:"));
+        this->m_passLabel = new QLabel(tr("Password:"));
         this->m_userEdit = new QLineEdit();
         this->m_passEdit = new QLineEdit();
-        this->m_loginBtn = new QPushButton("Login");
-        this->m_quitBtn = new QPushButton("Quit");
+        this->m_loginBtn = new QPushButton(tr("Login"));
+        this->m_quitBtn = new QPushButton(tr("Quit"));
 
         this->m_userLabel->setBuddy(m_userEdit);
         this->m_passLabel->setBuddy(m_passEdit);
 
         this->m_passEdit->setEchoMode(QLineEdit::Password);
 
-        QHBoxLayout *userLayout = new QHBoxLayout();
-        userLayout->addWidget(this->m_userLabel);
-        userLayout->addWidget(this->m_userEdit);
+        QVBoxLayout *labelLayout = new QVBoxLayout();
+        labelLayout->addWidget(this->m_userLabel);
+        labelLayout->addWidget(this->m_passLabel);
 
-        QHBoxLayout *passLayout = new QHBoxLayout();
-        passLayout->addWidget(this->m_passLabel);
-        passLayout->addWidget(this->m_passEdit);
+        QVBoxLayout *editLayout = new QVBoxLayout();
+        editLayout->addWidget(this->m_userEdit);
+        editLayout->addWidget(this->m_passEdit);
+
+        QHBoxLayout *loginLayout = new QHBoxLayout();
+        loginLayout->addLayout(labelLayout);
+        loginLayout->addLayout(editLayout);
 
         QHBoxLayout *btnLayout = new QHBoxLayout();
         btnLayout->addWidget(this->m_loginBtn);
         btnLayout->addWidget(this->m_quitBtn);
 
         QVBoxLayout *mainLayout = new QVBoxLayout();
-        mainLayout->addLayout(userLayout);
-        mainLayout->addLayout(passLayout);
+        mainLayout->addWidget(this->m_logo);
+        mainLayout->addLayout(loginLayout);
         mainLayout->addLayout(btnLayout);
 
         this->setLayout(mainLayout);
 
-        //QObject::connect(this->m_loginBtn, SIGNAL(clicked(bool)), this, SLOT(loginController()));
         QObject::connect(this->m_quitBtn, SIGNAL(clicked(bool)), this, SLOT(close()));
     }
 

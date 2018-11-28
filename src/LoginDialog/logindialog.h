@@ -23,7 +23,7 @@ namespace Luna {
         QLineEdit *passEdit() const;
 
     private:
-        QLabel *m_userLabel, *m_passLabel;
+        QLabel *m_userLabel, *m_passLabel, *m_logo;
         QLineEdit *m_userEdit, *m_passEdit;
         QPushButton *m_loginBtn, *m_quitBtn;
     };

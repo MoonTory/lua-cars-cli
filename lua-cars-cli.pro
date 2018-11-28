@@ -25,7 +25,13 @@ SOURCES += main.cpp \
     src/loginstate.cpp \
     src/log.cpp \
     src/LoginDialog/logindialog.cpp \
-    src/eventhandler.cpp
+    src/eventhandler.cpp \
+    src/database.cpp \
+    src/models/client.cpp \
+    src/models/adress.cpp \
+    src/models/user.cpp \
+    src/mainwindowstate.cpp \
+    src/MainWindow/mainwindow.cpp
 
 HEADERS += \
     src/application.hpp \
@@ -84,9 +90,22 @@ HEADERS += \
     vendor/spdlog/include/spdlog/tweakme.h \
     vendor/spdlog/include/spdlog/version.h \
     src/LoginDialog/logindialog.h \
-    src/eventhandler.h
+    src/eventhandler.h \
+    src/appdata.h \
+    src/database.h \
+    src/models/client.h \
+    src/models/adress.h \
+    src/models/user.h \
+    src/mainwindowstate.h \
+    src/MainWindow/mainwindow.h
 
 DISTFILES += \
     vendor/spdlog/include/spdlog/fmt/bundled/LICENSE.rst \
     vendor/spdlog/include/spdlog/fmt/bundled/LICENSE.rst \
-    LICENSE
+    LICENSE \
+    resources/logo/Luna_Cars_Client_Logo.png \
+    vendor/json/LICENSE.MIT
+
+FORMS +=
+
+RESOURCES +=

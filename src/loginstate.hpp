@@ -12,8 +12,10 @@ namespace Luna {
     {
     public:
         LoginState( AppDataRef _data );
+        ~LoginState();
 
-        void Init()         override;
+        void Init() override;
+        void LoginEvent();
     private:
         AppDataRef m_data;
         LoginDialog *m_dialog;
