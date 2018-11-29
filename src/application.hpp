@@ -17,6 +17,7 @@ namespace Luna {
 
     private:
         bool m_isRunning;
+        // Shared pointer of AppData
         AppDataRef m_data = std::make_shared<AppData>();
 
         void Run();

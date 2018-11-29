@@ -21,12 +21,12 @@ namespace Luna {
         {
             this->m_user = this->m_db->FindUser(_user, _pass);
             LUNA_INFO("Login Handler");
-            qDebug() << _username << _password;
+            LUNA_TRACE("Login Attempt -> User: {0} Pass: {1}", _user, _pass);
             delete user;
             return true;
         } else {
             LUNA_ERROR("Login Unsuccessful");
-            qDebug() << _username << _password;
+            LUNA_TRACE("Login Attempt -> User: \"{0}\" Pass: \"{1}\"", _user, _pass);
             delete user;
             return false;
         }

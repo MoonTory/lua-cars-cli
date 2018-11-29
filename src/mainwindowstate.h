@@ -11,9 +11,9 @@ namespace Luna {
     {
     public:
         MainWindowState( AppDataRef _data );
-        ~MainWindowState();
+        ~MainWindowState() override;
 
-
+        // State method override
         void Init() override;
     private:
         AppDataRef m_data;

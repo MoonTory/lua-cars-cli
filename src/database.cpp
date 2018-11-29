@@ -5,10 +5,7 @@
 
 namespace Luna {
 
-    Database::Database()
-    {
-
-    }
+    Database::Database() {  }
 
     void Database::InsertUser(const User &_user)
     {
@@ -31,17 +28,19 @@ namespace Luna {
         std::fstream file;
         file.open("Users.txt", std::ios::in);
 
-        if(!file.is_open())
+        if(!file.is_open()) // Checking for file health
         {
             LUNA_ERROR("Error while opening the file.");
             return nullptr;
         }
 
+        // Temp strings for file query
         std::string username;
         std::string password;
         std::string aux;
-
         std::string temp;
+
+        // Query "Users.txt" for User & return the found user
         while(std::getline(file, temp))
         {
             std::stringstream ss(temp);
@@ -50,7 +49,7 @@ namespace Luna {
             std::getline(ss, aux, ';');
             int level = stoi(aux);
 
-            if(_username == username && _password == password)
+            if(_username == username && _password == password) // Validating User query
             {
                 User *payload = new User();
                 payload->setUsername(username);
@@ -66,13 +65,14 @@ namespace Luna {
                     payload->setLevel(UserLevel::USER_DEV);
                     break;
                 }
-                return payload;
+                file.close();
+                return payload; // Return found & validated User
                 delete payload;
             } else { continue; }
         }
 
         file.close();
-        return nullptr;
+        return nullptr; // Return a nullptr is no User was found in the query.
     }
 
 }

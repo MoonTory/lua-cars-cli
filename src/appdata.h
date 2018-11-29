@@ -6,7 +6,7 @@
 
 namespace Luna {
 
-    struct AppData
+    struct AppData // AppData object to hold all application modules
     {
         StateMachine *machine;
         EventHandler *eventHandler;

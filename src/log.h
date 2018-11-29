@@ -6,7 +6,7 @@
 
 namespace Luna {
 
-    class Log
+    class Log // Global Log class for application wide logging
     {
     public:
         static void Init();
@@ -18,6 +18,7 @@ namespace Luna {
 
 } // namespace luna
 
+// Defining LOG MACROS
 #define LUNA_TRACE(...)    ::Luna::Log::GetCoreLogger()->trace(__VA_ARGS__)
 #define LUNA_INFO(...)     ::Luna::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define LUNA_WARN(...)     ::Luna::Log::GetCoreLogger()->warn(__VA_ARGS__)

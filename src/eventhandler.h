@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QString>
 
-#include "models/user.h"
+#include "Models/user.h"
 #include "database.h"
 
 namespace Luna {
@@ -15,8 +15,10 @@ namespace Luna {
     public:
         explicit EventHandler(QObject *parent = nullptr);
 
+        // Event Handlers
         bool LoginHandle(const QString &_username, const QString &_password);
 
+        // Getter Methods
         User *user() const;
 
     private:
