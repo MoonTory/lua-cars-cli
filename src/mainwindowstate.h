@@ -2,8 +2,9 @@
 #define MAINWINDOWSTATE_H
 
 #include "state.hpp"
+#include <string>
 #include "application.hpp"
-#include "MainWindow/mainwindow.h"
+#include "Forms/MainWindow/mainwindow.h"
 
 namespace Luna {
 

@@ -1,7 +1,7 @@
 #include "loginstate.hpp"
-#include "mainwindowstate.h"
 #include <QString>
 #include <QMessageBox>
+#include "mainwindowstate.h"
 
 namespace Luna {
 

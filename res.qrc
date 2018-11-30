@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>resources/logo/Luna_Cars_Client_Logo.png</file>
+        <file>resources/icons/plus.png</file>
+        <file>resources/icons/list.png</file>
+        <file>resources/icons/home.png</file>
+        <file>resources/icons/github-square.png</file>
+        <file>resources/icons/gear.png</file>
+        <file>resources/icons/database.png</file>
+        <file>resources/icons/dashboard.png</file>
+        <file>resources/icons/close.png</file>
+        <file>resources/icons/car.png</file>
+        <file>resources/icons/address-card.png</file>
+        <file>resources/icons/Moon-icon.png</file>
+        <file>resources/icons/question-circle.png</file>
+    </qresource>
+</RCC>

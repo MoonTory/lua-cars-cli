@@ -24,14 +24,14 @@ SOURCES += main.cpp \
     src/application.cpp \
     src/loginstate.cpp \
     src/log.cpp \
-    src/LoginDialog/logindialog.cpp \
     src/eventhandler.cpp \
     src/database.cpp \
     src/mainwindowstate.cpp \
-    src/MainWindow/mainwindow.cpp \
     src/Models/client.cpp \
     src/Models/user.cpp \
-    src/Models/address.cpp
+    src/Models/address.cpp \
+    src/Forms/LoginDialog/logindialog.cpp \
+    src/Forms/MainWindow/mainwindow.cpp
 
 HEADERS += \
     src/application.hpp \
@@ -89,15 +89,15 @@ HEADERS += \
     vendor/spdlog/include/spdlog/spdlog.h \
     vendor/spdlog/include/spdlog/tweakme.h \
     vendor/spdlog/include/spdlog/version.h \
-    src/LoginDialog/logindialog.h \
     src/eventhandler.h \
     src/appdata.h \
     src/database.h \
     src/mainwindowstate.h \
-    src/MainWindow/mainwindow.h \
     src/Models/client.h \
     src/Models/user.h \
-    src/Models/address.h
+    src/Models/address.h \
+    src/Forms/LoginDialog/logindialog.h \
+    src/Forms/MainWindow/mainwindow.h
 
 DISTFILES += \
     vendor/spdlog/include/spdlog/fmt/bundled/LICENSE.rst \
@@ -108,4 +108,5 @@ DISTFILES += \
 
 FORMS +=
 
-RESOURCES +=
+RESOURCES += \
+    res.qrc

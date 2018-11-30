@@ -37,24 +37,24 @@ namespace Luna {
         // Temp strings for file query
         std::string username;
         std::string password;
-        std::string aux;
-        std::string temp;
+        std::string tempLevel;
+        std::string lineQuery;
 
         // Query "Users.txt" for User & return the found user
-        while(std::getline(file, temp))
+        while(std::getline(file, lineQuery))
         {
-            std::stringstream ss(temp);
+            std::stringstream ss(lineQuery);
             std::getline(ss, username, ';');
             std::getline(ss, password, ';');
-            std::getline(ss, aux, ';');
-            int level = stoi(aux);
+            std::getline(ss, tempLevel, ';');
+            int level = stoi(tempLevel); // Converting string into an "Int"
 
             if(_username == username && _password == password) // Validating User query
             {
                 User *payload = new User();
                 payload->setUsername(username);
                 payload->setPassword(password);
-                switch (level) {
+                switch (level) { // Verifying User level, and setting payload accordingly
                 case 0:
                     payload->setLevel(UserLevel::USER_ADMIN);
                     break;

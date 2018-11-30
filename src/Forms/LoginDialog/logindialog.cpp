@@ -13,7 +13,7 @@ namespace Luna {
         this->setFixedSize(265, 145);
 
         this->m_logo = new QLabel();
-        this->m_logo->setPixmap(QPixmap(QString("resources/logo/Luna_Cars_Client_Logo.png")));
+        this->m_logo->setPixmap(QPixmap(QString(":/images/resources/logo/Luna_Cars_Client_Logo.png")));
 
         this->m_userLabel = new QLabel(tr("Username:"));
         this->m_passLabel = new QLabel(tr("Password:"));

@@ -33,9 +33,8 @@ namespace Luna {
         std::string m_username;
         std::string m_password;
         UserLevel m_level;
-
     };
 
-}
+} // namespace Luna
 
 #endif // USER_H

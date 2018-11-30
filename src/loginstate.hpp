@@ -4,7 +4,7 @@
 
 #include "state.hpp"
 #include "application.hpp"
-#include "LoginDialog/logindialog.h"
+#include "Forms/LoginDialog/logindialog.h"
 
 namespace Luna {
 
