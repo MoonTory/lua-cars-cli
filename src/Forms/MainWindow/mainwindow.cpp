@@ -13,7 +13,7 @@ namespace Luna {
 
         // Setting Central Widget for the main Menu
         this->setFixedSize(300,500);
-        this->setCentralWidget(this->m_centralWidget);
+        this->setCentralWidget(this->m_central);
 
         this->configWidgets();
         this->createLayout();
@@ -24,7 +24,8 @@ namespace Luna {
 
     void MainWindow::initilizeWidgets()
     {
-        this->m_centralWidget = new QGroupBox();
+        this->m_central = new QWidget();
+        this->m_mainBox = new QGroupBox();
         this->m_labelLogo = new QLabel();
         this->m_labelUser = new QLabel();
         this->m_labelUserTab = new QLabel();
@@ -35,7 +36,7 @@ namespace Luna {
 
     void MainWindow::configWidgets()
     {
-        this->m_centralWidget->setTitle(tr("Main Menu"));
+        this->m_mainBox->setTitle(tr("Main Menu"));
 
         this->m_labelLogo->setPixmap(QPixmap(":/images/resources/logo/Luna_Cars_Client_Logo.png"));
         this->m_labelLogo->setGeometry(27,30,241,30);
@@ -43,12 +44,12 @@ namespace Luna {
         this->m_labelUserTab->setText("User:");
         this->m_labelUserTab->setStyleSheet("font-weight: bold; color: red; font-size: 13pt;");
         this->m_labelUser->setText("default");
-        this->m_labelUser->setStyleSheet("ont-size: 11pt;");
+        this->m_labelUser->setStyleSheet("font-size: 11pt;");
 
         this->m_labelLevelTab->setText("Level:");
         this->m_labelLevelTab->setStyleSheet("font-weight: bold; color: red; font-size: 13pt;");
         this->m_labelLevel->setText("default");
-        this->m_labelLevel->setStyleSheet("ont-size: 11pt;");
+        this->m_labelLevel->setStyleSheet("font-size: 11pt;");
 
         this->m_frame->setGeometry(12,68,271,39);
     }
@@ -73,7 +74,11 @@ namespace Luna {
         layout->addLayout(logoLayout);
         layout->addWidget(this->m_frame);
         layout->addStretch(1);
-        this->m_centralWidget->setLayout(layout);
+        this->m_mainBox->setLayout(layout);
+
+        QVBoxLayout *centralLayout = new QVBoxLayout();
+        centralLayout->addWidget(m_mainBox);
+        this->m_central->setLayout(centralLayout);
     }
 
     void MainWindow::createMenus()

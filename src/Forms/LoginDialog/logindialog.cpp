@@ -10,6 +10,7 @@ namespace Luna {
         :QDialog(parent)
     {
         this->setWindowTitle("Login");
+        this->setWindowIcon(QIcon(":/images/resources/icons/Moon-icon.png"));
         this->setFixedSize(265, 145);
 
         this->m_logo = new QLabel();

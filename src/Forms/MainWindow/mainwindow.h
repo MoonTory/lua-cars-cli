@@ -38,7 +38,8 @@ namespace Luna {
         void createToolBars();
 
         // Private Variables
-        QGroupBox *m_centralWidget;
+        QWidget *m_central;
+        QGroupBox *m_mainBox;
         QLabel *m_labelLogo, *m_labelUser, *m_labelUserTab,
                *m_labelLevel, *m_labelLevelTab;
         QFrame *m_frame;
