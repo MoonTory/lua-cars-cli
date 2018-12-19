@@ -1,3 +1,9 @@
 /lua-cars-cli.pro.user
 /libs
 desktop.ini
+.vs/
+.qmake.stash
+GeneratedFiles/
+debug/
+release/
+x64/

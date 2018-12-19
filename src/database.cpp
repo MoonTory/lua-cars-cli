@@ -72,7 +72,7 @@ namespace Luna {
         }
 
         file.close();
-        return nullptr; // Return a nullptr is no User was found in the query.
+        return nullptr; // Return a nullptr if no User was found in the query.
     }
 
 }
