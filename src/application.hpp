@@ -1,9 +1,9 @@
 #ifndef APPLICATION_HPP
 #define APPLICATION_HPP
 
-#include <QApplication>
 #include "appdata.h"
 #include "log.h"
+#include <QApplication>
 #include <memory>
 
 namespace Luna {
@@ -16,7 +16,6 @@ namespace Luna {
         ~Application();
 
     private:
-        bool m_isRunning;
         // Shared pointer of AppData
         AppDataRef m_data = std::make_shared<AppData>();
 

@@ -17,12 +17,13 @@ namespace Luna {
 
         // Event Handlers
         bool LoginHandle(const QString &_username, const QString &_password);
+		bool Login(const QString &_username, const QString &_password);
 
         // Getter Methods
         User *user() const;
 
     private:
-        User *m_user;
+		User *m_user;
         Database *m_db;
     };
 

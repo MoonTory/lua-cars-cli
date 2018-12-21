@@ -10,6 +10,8 @@ namespace Luna {
     {
         StateMachine *machine;
         EventHandler *eventHandler;
+
+		bool m_isRunning;
     };
 
     typedef std::shared_ptr<AppData> AppDataRef;

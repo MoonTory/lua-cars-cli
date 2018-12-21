@@ -14,4 +14,7 @@
         <file>resources/icons/Moon-icon.png</file>
         <file>resources/icons/question-circle.png</file>
     </qresource>
+    <qresource prefix="/data">
+        <file>db/users.db</file>
+    </qresource>
 </RCC>

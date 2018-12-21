@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua-cars-cli", "lua-cars-cli.vcxproj", "{3163E632-E7B9-3AB5-ACB9-15C0985B395D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3163E632-E7B9-3AB5-ACB9-15C0985B395D}.Debug|x64.ActiveCfg = Debug|x64
+		{3163E632-E7B9-3AB5-ACB9-15C0985B395D}.Debug|x64.Build.0 = Debug|x64
+		{3163E632-E7B9-3AB5-ACB9-15C0985B395D}.Release|x64.ActiveCfg = Release|x64
+		{3163E632-E7B9-3AB5-ACB9-15C0985B395D}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89F4F555-9A72-4F4F-998C-45F0FF298FD9}
+	EndGlobalSection
+EndGlobal
