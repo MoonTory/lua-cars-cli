@@ -107,34 +107,40 @@ namespace Luna {
 				QString _user;
 				QString _pass;
 				QString _level;
-				while (query.next())
+				if (query.next())
 				{
 					LUNA_INFO("Query");
 					_user = query.value(0).toString();
 					_pass = query.value(1).toString();
 					_level = query.value(2).toString();
+
+					payload->setUsername(_user.toStdString());
+					payload->setPassword(_pass.toStdString());
+					switch (_level.toInt()) { // Verifying User level, and setting payload accordingly
+					case 0:
+						payload->setLevel(UserLevel::USER_ADMIN);
+						break;
+					case 1:
+						payload->setLevel(UserLevel::USER_CLIENT);
+						break;
+					case 2:
+						payload->setLevel(UserLevel::USER_DEV);
+						break;
+					}
+
+					this->m_db.close();
+					this->m_db = QSqlDatabase();
+					this->m_db.removeDatabase(QSqlDatabase::defaultConnection);
+					LUNA_INFO("User query was successful!");
+					return payload;
+					delete payload;
 				}
-				
-				payload->setUsername(_user.toStdString());
-				payload->setPassword(_pass.toStdString());
-				switch (_level.toInt()) { // Verifying User level, and setting payload accordingly
-				case 0:
-					payload->setLevel(UserLevel::USER_ADMIN);
-					break;
-				case 1:
-					payload->setLevel(UserLevel::USER_CLIENT);
-					break;
-				case 2:
-					payload->setLevel(UserLevel::USER_DEV);
-					break;
+				else {
+					this->m_db.close();
+					this->m_db = QSqlDatabase();
+					this->m_db.removeDatabase(QSqlDatabase::defaultConnection);
+					return nullptr;
 				}
-				
-				this->m_db.close();
-				this->m_db = QSqlDatabase();
-				this->m_db.removeDatabase(QSqlDatabase::defaultConnection);
-				LUNA_INFO("User query was successful!");
-				return payload;
-				delete payload;	
 			}
 		}
 	}
