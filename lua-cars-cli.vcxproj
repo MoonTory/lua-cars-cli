@@ -223,8 +223,7 @@
     <ClInclude Include="vendor\spdlog\include\spdlog\sinks\daily_file_sink.h" />
     <ClInclude Include="src\database.h" />
     <ClInclude Include="vendor\spdlog\include\spdlog\sinks\dist_sink.h" />
-    <QtMoc Include="src\eventhandler.h">
-    </QtMoc>
+    <ClInclude Include="src\eventhandler.h" />
     <ClInclude Include="vendor\spdlog\include\spdlog\details\file_helper.h" />
     <ClInclude Include="vendor\spdlog\include\spdlog\fmt\fmt.h" />
     <ClInclude Include="vendor\spdlog\include\spdlog\details\fmt_helper.h" />

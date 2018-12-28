@@ -27,7 +27,7 @@ namespace Luna {
 
     void LoginState::LoginEvent()
     {
-        if(!this->m_data->eventHandler->Login(this->m_dialog->userEdit()->text(), this->m_dialog->passEdit()->text()))
+        if(!this->m_data->eventHandler->LoginHandle(this->m_dialog->userEdit()->text(), this->m_dialog->passEdit()->text()))
         {
             QMessageBox::information(this->m_dialog, "Error!", "Username/Password is incorrect!");
         } else {

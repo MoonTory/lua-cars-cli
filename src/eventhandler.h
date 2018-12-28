@@ -1,7 +1,6 @@
 #ifndef EVENTHANDLER_H
 #define EVENTHANDLER_H
 
-#include <QObject>
 #include <QString>
 
 #include "Models/user.h"
@@ -9,15 +8,13 @@
 
 namespace Luna {
 
-    class EventHandler : public QObject
+    class EventHandler
     {
-        Q_OBJECT
     public:
-        explicit EventHandler(QObject *parent = nullptr);
+        explicit EventHandler();
 
         // Event Handlers
-        bool LoginHandle(const QString &_username, const QString &_password);
-		bool Login(const QString &_username, const QString &_password);
+		bool LoginHandle(const QString &_username, const QString &_password);
 
         // Getter Methods
         User *user() const;

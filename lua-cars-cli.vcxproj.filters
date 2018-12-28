@@ -148,9 +148,6 @@
     <ClInclude Include="vendor\spdlog\include\spdlog\sinks\dist_sink.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <QtMoc Include="src\eventhandler.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <ClInclude Include="vendor\spdlog\include\spdlog\details\file_helper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -280,6 +277,9 @@
     <ClInclude Include="vendor\spdlog\include\spdlog\sinks\wincolor_sink.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\eventhandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -332,6 +332,7 @@
     <QtRcc Include="res.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+    <None Include="resources\logo\Luna_Cars_Client_Logo.png" />
     <None Include="resources\logo\Luna_Cars_Client_Logo.png" />
   </ItemGroup>
   <ItemGroup>

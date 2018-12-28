@@ -23,7 +23,6 @@ namespace Luna {
         QObject::connect(this->m_window->aboutAction(), SIGNAL(triggered(bool)), qApp, SLOT(aboutQt()));
     }
 
-
     MainWindowState::~MainWindowState()
     {
         LUNA_WARN("Main Window State deleted");
