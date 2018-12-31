@@ -4,7 +4,7 @@
 #include <QString>
 
 #include "Models/user.h"
-#include "database.h"
+#include "DbManager.h"
 
 namespace Luna {
 
@@ -21,7 +21,7 @@ namespace Luna {
 
     private:
 		User *m_user;
-        Database *m_db;
+		DbManager *m_db;
     };
 
 }

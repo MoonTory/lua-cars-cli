@@ -50,8 +50,6 @@ namespace Luna {
         mainLayout->addLayout(btnLayout);
 
         this->setLayout(mainLayout);
-
-        QObject::connect(this->m_quitBtn, SIGNAL(clicked(bool)), this, SLOT(close()));
     }
 
     LoginDialog::~LoginDialog()
@@ -78,5 +76,10 @@ namespace Luna {
     {
         return m_loginBtn;
     }
+
+	QPushButton * LoginDialog::quitBtn() const
+	{
+		return m_quitBtn;
+	}
 
 }

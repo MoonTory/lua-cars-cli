@@ -56,7 +56,6 @@ namespace Luna {
 
     void MainWindow::createLayout()
     {
-
         QHBoxLayout *logoLayout = new QHBoxLayout();
         logoLayout->addStretch(1);
         logoLayout->addWidget(this->m_labelLogo);

@@ -56,9 +56,6 @@
     <ClCompile Include="src\Models\client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\database.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\eventhandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -85,6 +82,9 @@
     </ClCompile>
     <ClCompile Include="src\Models\user.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DbManager.cpp">
+      <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -140,9 +140,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="vendor\spdlog\include\spdlog\sinks\daily_file_sink.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\database.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="vendor\spdlog\include\spdlog\sinks\dist_sink.h">
@@ -334,6 +331,7 @@
     </QtRcc>
     <None Include="resources\logo\Luna_Cars_Client_Logo.png" />
     <None Include="resources\logo\Luna_Cars_Client_Logo.png" />
+    <None Include="resources\logo\Luna_Cars_Client_Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\json\LICENSE.MIT">
@@ -348,5 +346,10 @@
     <None Include="resources\logo\Luna_Cars_Client_Logo.png">
       <Filter>Distribution Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\DbManager.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
   </ItemGroup>
 </Project>

@@ -10,6 +10,7 @@ namespace Luna {
     {
         this->m_dialog = new LoginDialog();
         QObject::connect(this->m_dialog->loginBtn(), &QPushButton::clicked, [=](){ this->LoginEvent(); });
+		QObject::connect(this->m_dialog->quitBtn(), SIGNAL(clicked(bool)), this->m_dialog, SLOT(close()));
     }
 
     LoginState::~LoginState()
@@ -35,5 +36,4 @@ namespace Luna {
             this->m_data->machine->Update();
         }
     }
-
 }

@@ -7,12 +7,12 @@ namespace Luna {
 
     EventHandler::EventHandler()
     {
-        this->m_db = new Database();
+        this->m_db = new DbManager(QString("./db/data.db"));
     }
 
 	bool EventHandler::LoginHandle(const QString & _username, const QString & _password)
 	{
-		this->m_user = this->m_db->query_users(_username, _password);
+		this->m_user = this->m_db->auth_user(_username, _password);
 		if (this->m_user != nullptr)
 		{
 			LUNA_INFO("Login Handler");

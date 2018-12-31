@@ -187,10 +187,10 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\DbManager.cpp" />
     <ClCompile Include="src\Models\address.cpp" />
     <ClCompile Include="src\application.cpp" />
     <ClCompile Include="src\Models\client.cpp" />
-    <ClCompile Include="src\database.cpp" />
     <ClCompile Include="src\eventhandler.cpp" />
     <ClCompile Include="src\log.cpp" />
     <ClCompile Include="src\Forms\LoginDialog\logindialog.cpp" />
@@ -202,6 +202,12 @@
     <ClCompile Include="src\Models\user.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="src\DbManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\.;.\GeneratedFiles;.;.\vendor\spdlog\include;.\vendor\json\single_include;.\..\..\QT\5.12.0\MSVC2017_64\include;.\..\..\QT\5.12.0\MSVC2017_64\include\QtWidgets;.\..\..\QT\5.12.0\MSVC2017_64\include\QtGui;.\..\..\QT\5.12.0\MSVC2017_64\include\QtANGLE;.\..\..\QT\5.12.0\MSVC2017_64\include\QtCore;.\debug;\include;.\..\..\QT\5.12.0\MSVC2017_64\mkspecs\win32-msvc;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSql</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_CONSOLE;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_NETWORK_LIB;QT_SQL_LIB</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\.;.\GeneratedFiles;.;.\vendor\spdlog\include;.\vendor\json\single_include;.\..\..\QT\5.12.0\MSVC2017_64\include;.\..\..\QT\5.12.0\MSVC2017_64\include\QtWidgets;.\..\..\QT\5.12.0\MSVC2017_64\include\QtGui;.\..\..\QT\5.12.0\MSVC2017_64\include\QtANGLE;.\..\..\QT\5.12.0\MSVC2017_64\include\QtCore;.\release;\include;.\..\..\QT\5.12.0\MSVC2017_64\mkspecs\win32-msvc;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSql</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">_CONSOLE;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;QT_NETWORK_LIB;QT_SQL_LIB</Define>
+    </QtMoc>
     <ClInclude Include="src\Models\address.h" />
     <ClInclude Include="vendor\spdlog\include\spdlog\sinks\android_sink.h" />
     <ClInclude Include="vendor\spdlog\include\spdlog\sinks\ansicolor_sink.h" />
@@ -221,7 +227,6 @@
     <ClInclude Include="vendor\spdlog\include\spdlog\details\console_globals.h" />
     <ClInclude Include="vendor\spdlog\include\spdlog\fmt\bundled\core.h" />
     <ClInclude Include="vendor\spdlog\include\spdlog\sinks\daily_file_sink.h" />
-    <ClInclude Include="src\database.h" />
     <ClInclude Include="vendor\spdlog\include\spdlog\sinks\dist_sink.h" />
     <ClInclude Include="src\eventhandler.h" />
     <ClInclude Include="vendor\spdlog\include\spdlog\details\file_helper.h" />

@@ -18,6 +18,7 @@ namespace Luna {
 
         // Getters
         QPushButton *loginBtn() const;
+		QPushButton *quitBtn() const;
 
         QLineEdit *userEdit() const;
         QLineEdit *passEdit() const;
