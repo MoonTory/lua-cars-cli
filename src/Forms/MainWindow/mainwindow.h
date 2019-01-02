@@ -23,6 +23,7 @@ namespace Luna {
         QLabel *labelLevel() const;
 
         QAction *aboutAction() const;
+		QAction *customerManagerAction() const;
 
     signals:
 

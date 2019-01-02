@@ -26,7 +26,7 @@ namespace Luna {
         void setPassword(const std::string &password);
         std::string password() const;
 
-        UserLevel level() const;
+        std::string level() const;
         void setLevel(const UserLevel &level);
 
     private:

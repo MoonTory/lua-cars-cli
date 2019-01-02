@@ -15,6 +15,7 @@ namespace Luna {
 
         // Event Handlers
 		bool LoginHandle(const QString &_username, const QString &_password);
+		bool CreateUser(const QString &_username, const QString &_password, const QString &_level);
 
         // Getter Methods
         User *user() const;

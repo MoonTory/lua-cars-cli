@@ -5,6 +5,7 @@
 #include <string>
 #include "application.hpp"
 #include "Forms/MainWindow/mainwindow.h"
+#include "Forms/ClientManagerDialog/clientmanagerdialog.h"
 
 namespace Luna {
 
@@ -16,9 +17,14 @@ namespace Luna {
 
         // State method override
         void Init() override;
+		void createCustomerManagerDialog();
+
+		void CreateUserEvent();
+
     private:
         AppDataRef m_data;
-        MainWindow *m_window;
+		MainWindow *m_window;
+		ClientManagerDialog *m_customerManagerDialog;
     };
 
 } // namespace Luna

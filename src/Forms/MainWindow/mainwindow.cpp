@@ -126,6 +126,11 @@ namespace Luna {
         return m_aboutAction;
     }
 
+	QAction * MainWindow::customerManagerAction() const
+	{
+		return m_customerManagerAction;
+	}
+
     QLabel *MainWindow::labelLevel() const
     {
         return m_labelLevel;

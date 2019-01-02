@@ -83,7 +83,10 @@
     <ClCompile Include="src\Models\user.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\DbManager.cpp">
+    <ClCompile Include="src\dbmanager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Forms\ClientManagerDialog\clientmanagerdialog.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -277,6 +280,9 @@
     <ClInclude Include="src\eventhandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\dbmanager.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -332,6 +338,8 @@
     <None Include="resources\logo\Luna_Cars_Client_Logo.png" />
     <None Include="resources\logo\Luna_Cars_Client_Logo.png" />
     <None Include="resources\logo\Luna_Cars_Client_Logo.png" />
+    <None Include="resources\logo\Luna_Cars_Client_Logo.png" />
+    <None Include="resources\logo\Luna_Cars_Client_Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\json\LICENSE.MIT">
@@ -348,7 +356,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="src\DbManager.h">
+    <QtMoc Include="src\Forms\ClientManagerDialog\clientmanagerdialog.h">
       <Filter>Generated Files</Filter>
     </QtMoc>
   </ItemGroup>

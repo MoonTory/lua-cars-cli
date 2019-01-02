@@ -3,14 +3,9 @@
 
 namespace Luna {
 
-	DbManager::DbManager(const QString &_path, QObject *parent)
-		:QObject(parent)
+	DbManager::DbManager(const QString &_path)
 	{
-		if (QSqlDatabase::isDriverAvailable(SQL_DRIVER))
-		{
-			this->m_db = QSqlDatabase::addDatabase(SQL_DRIVER);
-			this->m_db.setDatabaseName(_path);
-		}
+		this->m_path = _path;
 	}
 
 	bool DbManager::insert_user(const QString & _username, const QString & _password, const QString & _level)
@@ -28,11 +23,8 @@ namespace Luna {
 			if (query.exec())
 			{
 				success = true;
-			}
-			else
-			{
-				qDebug() << "insert_user error:"
-					<< query.lastError();
+			} else {
+				qDebug() << "insert_user error:" << query.lastError();
 			}
 		}
 
@@ -53,11 +45,8 @@ namespace Luna {
 			if (query.exec())
 			{
 				success = true;
-			}
-			else
-			{
-				qDebug() << "delete_user error:"
-					<< query.lastError();
+			} else {
+				qDebug() << "delete_user error:" << query.lastError();
 			}
 		}
 
@@ -79,11 +68,8 @@ namespace Luna {
 			if (query.exec())
 			{
 				success = true;
-			}
-			else
-			{
-				qDebug() << "insert_user error:"
-					<< query.lastError();
+			} else {
+				qDebug() << "insert_user error:" << query.lastError();
 			}
 		}
 
@@ -105,11 +91,8 @@ namespace Luna {
 			if (query.exec())
 			{
 				success = true;
-			}
-			else
-			{
-				qDebug() << "update_password error:"
-					<< query.lastError();
+			} else {
+				qDebug() << "update_password error:" << query.lastError();
 			}
 		}
 
@@ -131,11 +114,8 @@ namespace Luna {
 			if (query.exec())
 			{
 				success = true;
-			}
-			else
-			{
-				qDebug() << "update_level error:"
-					<< query.lastError();
+			} else {
+				qDebug() << "update_level error:" << query.lastError();
 			}
 		}
 
@@ -207,8 +187,7 @@ namespace Luna {
 					success = true;
 					QString payload = query.value(0).toString();
 				}
-			}
-			else {
+			} else {
 				success = false;
 				qDebug() << "find_user error:" << query.lastError();
 			}
@@ -236,12 +215,17 @@ namespace Luna {
 
 	bool DbManager::connect_db()
 	{
+		if (QSqlDatabase::isDriverAvailable(SQL_DRIVER))
+		{
+			this->m_db = QSqlDatabase::addDatabase(SQL_DRIVER);
+			this->m_db.setDatabaseName(this->m_path);
+		} else { return false; }
+
 		if (!this->m_db.open())
 		{
 			qWarning() << "ERROR:" << this->m_db.lastError();
 			return false;
-		}
-		else {
+		} else {
 			qDebug() << "Database: connected...";
 			return true;
 		}
@@ -253,5 +237,4 @@ namespace Luna {
 		this->m_db = QSqlDatabase();
 		this->m_db.removeDatabase(QSqlDatabase::defaultConnection);
 	}
-
 }

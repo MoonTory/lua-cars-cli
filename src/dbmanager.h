@@ -15,11 +15,10 @@ namespace Luna {
 
 	#define SQL_DRIVER "QSQLITE"
 
-	class DbManager : public QObject
+	class DbManager
 	{
-		Q_OBJECT
 	public:
-		DbManager(const QString &_path, QObject *parent = nullptr);
+		DbManager(const QString &_path);
 		~DbManager() { this->close_db(); }
 
 		bool insert_user(const QString & _username, const QString & _password, const QString & _level);
@@ -34,6 +33,7 @@ namespace Luna {
 
 	private:
 		QSqlDatabase m_db;
+		QString m_path;
 
 		bool connect_db();
 		void close_db();

@@ -31,9 +31,21 @@ namespace Luna {
         m_password = password;
     }
 
-    UserLevel User::level() const
+    std::string User::level() const
     {
-        return m_level;
+		switch (this->m_level) {
+		case 0:
+			return "ADMIN";
+			break;
+		case 1:
+			return "CLIENT";
+			break;
+		case 2:
+			return "DEV";
+			break;
+		default:
+			break;
+		}
     }
 
     void User::setLevel(const UserLevel &level)
